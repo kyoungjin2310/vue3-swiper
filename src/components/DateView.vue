@@ -3,11 +3,12 @@
     <v-calendar
       v-model="value"
       ref="picker"
-      locale="en"
+      locale="ko"
       :title="title"
-      :attributes="attributes"
+      :attributes="attrs"
       :available-dates="{ start: new Date(), end: null }"
       @dayclick="onDayClick"
+      title-position="left"
     >
     </v-calendar>
     {{ days }}
@@ -19,6 +20,13 @@ export default {
     return {
       days: [],
       title: 'text',
+      attrs: [
+        {
+          key: 'today',
+          highlight: true,
+          dates: new Date(),
+        },
+      ],
     };
   },
   computed: {
