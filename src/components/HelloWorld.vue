@@ -6,7 +6,7 @@
       class="mySwiper"
       @swiper="onSwiper"
     >
-      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide><date-view /> </swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
       <swiper-slide>Slide 3</swiper-slide>
     </swiper>
@@ -15,6 +15,7 @@
 </template>
 <script>
 // Import Swiper Vue.js components
+import 'v-calendar/dist/style.css';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
@@ -24,10 +25,12 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper';
+import DateView from './DateView.vue';
 export default {
   components: {
     Swiper,
     SwiperSlide,
+    DateView,
   },
   setup() {
     return {
