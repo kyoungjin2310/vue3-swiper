@@ -8,7 +8,9 @@
     >
       <swiper-slide><date-view /> </swiper-slide>
       <swiper-slide><date-vuetify /> </swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
+      <swiper-slide>
+        <menu-wrap />
+      </swiper-slide>
     </swiper>
     <button @click="nextSlide">Next</button>
   </div>
@@ -27,12 +29,14 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
 import DateView from './DateView.vue';
 import DateVuetify from './DateVuetify.vue';
+import MenuWrap from './MenuWrap.vue';
 export default {
   components: {
     Swiper,
     SwiperSlide,
     DateView,
     DateVuetify,
+    MenuWrap,
   },
   setup() {
     return {

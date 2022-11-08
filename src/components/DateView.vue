@@ -3,7 +3,7 @@
     <v-calendar
       v-model="value"
       ref="picker"
-      locale="ko"
+      locale="us"
       :title="title"
       :attributes="attrs"
       :available-dates="{ start: new Date(), end: null }"
@@ -15,6 +15,7 @@
   </div>
 </template>
 <script>
+import ct from 'countries-and-timezones';
 export default {
   data() {
     return {
@@ -28,6 +29,10 @@ export default {
         },
       ],
     };
+  },
+  created() {
+    const country = ct.getCountry('KR');
+    console.log(country);
   },
   computed: {
     dates() {
