@@ -11,6 +11,9 @@
       <swiper-slide>
         <menu-wrap />
       </swiper-slide>
+      <swiper-slide>
+        <lang-view />
+      </swiper-slide>
     </swiper>
     <button @click="nextSlide">Next</button>
   </div>
@@ -30,6 +33,7 @@ import { Pagination } from 'swiper';
 import DateView from './DateView.vue';
 import DateVuetify from './DateVuetify.vue';
 import MenuWrap from './MenuWrap.vue';
+import LangView from './LangView.vue';
 export default {
   components: {
     Swiper,
@@ -37,6 +41,7 @@ export default {
     DateView,
     DateVuetify,
     MenuWrap,
+    LangView,
   },
   setup() {
     return {
