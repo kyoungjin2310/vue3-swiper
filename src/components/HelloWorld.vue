@@ -14,6 +14,9 @@
       <swiper-slide>
         <lang-view />
       </swiper-slide>
+      <swiper-slide>
+        <time-picker />
+      </swiper-slide>
     </swiper>
     <button @click="nextSlide">Next</button>
   </div>
@@ -34,6 +37,7 @@ import DateView from './DateView.vue';
 import DateVuetify from './DateVuetify.vue';
 import MenuWrap from './MenuWrap.vue';
 import LangView from './LangView.vue';
+import TimePicker from './TimePicker.vue';
 export default {
   components: {
     Swiper,
@@ -42,6 +46,7 @@ export default {
     DateVuetify,
     MenuWrap,
     LangView,
+    TimePicker,
   },
   setup() {
     return {
