@@ -7,15 +7,18 @@
       @swiper="onSwiper"
     >
       <swiper-slide><date-view /> </swiper-slide>
-      <swiper-slide><date-vuetify /> </swiper-slide>
-      <swiper-slide>
+      <!-- <swiper-slide><date-vuetify /> </swiper-slide> -->
+      <!-- <swiper-slide>
         <menu-wrap />
-      </swiper-slide>
-      <swiper-slide>
+      </swiper-slide> -->
+      <!-- <swiper-slide>
         <lang-view />
-      </swiper-slide>
-      <swiper-slide>
+      </swiper-slide> -->
+      <!-- <swiper-slide>
         <time-picker />
+      </swiper-slide> -->
+      <swiper-slide>
+        <add-tag />
       </swiper-slide>
     </swiper>
     <button @click="nextSlide">Next</button>
@@ -34,19 +37,21 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper';
 import DateView from './DateView.vue';
-import DateVuetify from './DateVuetify.vue';
-import MenuWrap from './MenuWrap.vue';
-import LangView from './LangView.vue';
-import TimePicker from './TimePicker.vue';
+// import DateVuetify from './DateVuetify.vue';
+// import MenuWrap from './MenuWrap.vue';
+// import LangView from './LangView.vue';
+// import TimePicker from './TimePicker.vue';
+import AddTag from './AddTag.vue';
 export default {
   components: {
     Swiper,
     SwiperSlide,
     DateView,
-    DateVuetify,
-    MenuWrap,
-    LangView,
-    TimePicker,
+    // DateVuetify,
+    // MenuWrap,
+    // LangView,
+    // TimePicker,
+    AddTag,
   },
   setup() {
     return {
