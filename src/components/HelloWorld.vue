@@ -11,9 +11,9 @@
       <!-- <swiper-slide>
         <menu-wrap />
       </swiper-slide> -->
-      <!-- <swiper-slide>
+      <swiper-slide>
         <lang-view />
-      </swiper-slide> -->
+      </swiper-slide>
       <!-- <swiper-slide>
         <time-picker />
       </swiper-slide> -->
@@ -39,7 +39,7 @@ import { Pagination } from 'swiper';
 import DateView from './DateView.vue';
 // import DateVuetify from './DateVuetify.vue';
 // import MenuWrap from './MenuWrap.vue';
-// import LangView from './LangView.vue';
+import LangView from './LangView.vue';
 // import TimePicker from './TimePicker.vue';
 import AddTag from './AddTag.vue';
 export default {
@@ -49,7 +49,7 @@ export default {
     DateView,
     // DateVuetify,
     // MenuWrap,
-    // LangView,
+    LangView,
     // TimePicker,
     AddTag,
   },
