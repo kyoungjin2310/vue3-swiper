@@ -6,7 +6,7 @@
       locale="us"
       :title="title"
       :attributes="attrs"
-      :available-dates="{ start: new Date(), end: null }"
+      :disabled-dates="days"
       @dayclick="onDayClick"
       title-position="left"
     >
@@ -19,7 +19,7 @@ import ct from 'countries-and-timezones';
 export default {
   data() {
     return {
-      days: [],
+      days: [{ weekdays: [1, 7] }],
       title: 'text',
       attrs: [
         {
@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     dates() {
-      return this.days.map((day) => day.date);
+      return this.days.map((day) => day.dates);
     },
     attributes() {
       return this.dates.map((date) => ({
@@ -47,12 +47,10 @@ export default {
   },
   methods: {
     onDayClick(day) {
-      const idx = this.days.findIndex((d) => d.id === day.id);
-      if (idx >= 0) {
-        this.days.splice(idx, 1);
-      } else {
-        this.days = [];
+      if (this.days.indexOf(day.id) === -1) {
         this.days.push(day.id);
+      } else {
+        this.days.splice(this.days.indexOf(day.id), this.days.indexOf(day.id));
       }
     },
   },
