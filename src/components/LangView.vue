@@ -25,7 +25,7 @@
         rows="10"
         id="default"
         :multiline="true"
-        :value="value"
+        v-model="textVmodel"
         floatLabelType="Auto"
         placeholder="Enter your name"
         class="sdsd"
@@ -46,6 +46,7 @@ export default {
       startTime: '09:00',
       endTime: '10:00',
       date: new Date(),
+      textVmodel: null,
       value: `dlsd
       
       sdsd`,
