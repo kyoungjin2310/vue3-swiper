@@ -8,7 +8,7 @@ import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
 import i18n from './i18n';
 import { formatDate } from '@/utils/filter';
-
+import { store } from '@/store/index';
 const vuetify = createVuetify({
   components,
   directives,
@@ -16,7 +16,7 @@ const vuetify = createVuetify({
 
 const app = createApp(App);
 
-app.use(vuetify).use(VCalendar).use(i18n).use(router).mount('#app');
+app.use(store).use(vuetify).use(VCalendar).use(i18n).use(router).mount('#app');
 
 app.config.globalProperties.$filters = {
   formatDate,
