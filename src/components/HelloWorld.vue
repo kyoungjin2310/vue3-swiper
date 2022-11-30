@@ -12,6 +12,9 @@
         <menu-wrap />
       </swiper-slide> -->
       <swiper-slide>
+        <custom-date />
+      </swiper-slide>
+      <swiper-slide>
         <lang-view />
       </swiper-slide>
       <!-- <swiper-slide>
@@ -42,6 +45,7 @@ import DateView from './DateView.vue';
 import LangView from './LangView.vue';
 // import TimePicker from './TimePicker.vue';
 import AddTag from './AddTag.vue';
+import CustomDate from './CustomDate.vue';
 export default {
   components: {
     Swiper,
@@ -52,6 +56,7 @@ export default {
     LangView,
     // TimePicker,
     AddTag,
+    CustomDate,
   },
   setup() {
     return {
