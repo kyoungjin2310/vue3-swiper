@@ -1,90 +1,49 @@
 <template>
-  <div>
-    <div class="absolute-center text-h1 text-center">
-      {{ $t('signUp') }} 입니다
-    </div>
-    <div>{{ $filters.formatDate(date) }}</div>
-    <div>
-      {{ compare }}
-    </div>
-    <div>
-      <textarea
-        cols="30"
-        rows="10"
-        ref="textboxObj"
-        @change="changeValue"
-        id="default"
-        :multiline="true"
-        :value="value"
-        floatLabelType="Auto"
-        placeholder="Enter your name"
-        class="sdsd"
-      ></textarea>
-      <textarea
-        cols="30"
-        rows="10"
-        id="default"
-        :multiline="true"
-        v-model="textVmodel"
-        floatLabelType="Auto"
-        placeholder="Enter your name"
-        class="sdsd"
-      ></textarea>
-    </div>
-    <div class="test" v-html="content"></div>
-    <button class="popupBtn" @click.prevent="popup">popup</button>
-    <popup-test ref="popup" />
+  <div class="wrap">
+    <QuillEditor :options="options" />
   </div>
 </template>
-
 <script>
-import PopupTest from './PopupTest.vue';
+import { QuillEditor } from '@vueup/vue-quill';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 export default {
-  components: { PopupTest },
+  components: {
+    QuillEditor,
+  },
   data() {
     return {
-      startTime: '09:00',
-      endTime: '10:00',
-      date: new Date(),
-      textVmodel: null,
-      value: `dlsd
-      
-      sdsd`,
-      test: `dlsd
-      
-      sdsd`,
+      options: {
+        debug: 'info',
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline', 'strike'], // <strong>, <em>, <u>, <s>
+            ['blockquote', 'code-block'], // <blockquote>, <pre class="ql-syntax" spellcheck="false">
+            [{ header: 1 }, { header: 2 }], // <h1>, <h2>
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            [{ script: 'sub' }, { script: 'super' }], // <sub>, <sup>
+            [{ indent: '-1' }, { indent: '+1' }], // class제어
+            [{ direction: 'rtl' }], //class 제어
+            [{ size: ['small', false, 'large', 'huge'] }], //class 제어 - html로 되도록 확인
+            [{ header: [1, 2, 3, 4, 5, 6, false] }], // <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, normal
+            [{ font: [] }], // 글꼴 class로 제어
+            [{ color: [] }, { background: [] }], //style="color: rgb(230, 0, 0);", style="background-color: rgb(230, 0, 0);"
+            [{ align: [] }], // class
+            // ["clean"],
+            ['link', 'image', 'video'],
+          ],
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow',
+      },
     };
-  },
-  computed: {
-    compare() {
-      return this.startTime < this.endTime;
-    },
-    content() {
-      return this.value.split('\n').join('<br>');
-    },
-  },
-  methods: {
-    changeValue: function () {
-      this.value = this.$refs.textboxObj.value;
-      console.log(this.$refs.textboxObj.value);
-    },
-    popup() {
-      this.$refs.popup.Toggle();
-    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.sdsd {
-  border: 1px solid #000;
-}
-.test {
-  width: 500px;
-  height: 200px;
-}
-.popupBtn {
-  border: 1px solid #000;
-  margin-bottom: 160px;
+<style scoped>
+.wrap {
+  width: 100%;
+  height: 100%;
 }
 </style>
