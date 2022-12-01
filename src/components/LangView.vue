@@ -1,6 +1,7 @@
 <template>
   <div class="wrap">
-    <QuillEditor :options="options" />
+    <QuillEditor :options="options" ref="editor" />
+    <button @click.prevent="tested">저장</button>
   </div>
 </template>
 <script>
@@ -36,7 +37,20 @@ export default {
         placeholder: 'Compose an epic...',
         theme: 'snow',
       },
+      test: `<p>tesxtststetset</p>`,
     };
+  },
+  computed: {},
+  mounted() {
+    // console.log(this.$refs.editor.getEditor(), 'getEditor');
+    // console.log(this.$refs.editor.getHTML(), 'getHTML');
+    console.log(this.$refs.editor.setHTML(this.test));
+    // console.log(this.$refs.editor.getContents(0, 0));
+  },
+  methods: {
+    tested() {
+      console.log(this.$refs.editor.getEditor(), 'getEditor');
+    },
   },
 };
 </script>
@@ -44,6 +58,6 @@ export default {
 <style scoped>
 .wrap {
   width: 100%;
-  height: 100%;
+  height: 500px;
 }
 </style>
