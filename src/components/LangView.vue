@@ -2,6 +2,7 @@
   <div class="wrap">
     <QuillEditor :options="options" ref="editor" />
     <button @click.prevent="tested">저장</button>
+    <div class="data" v-html="data"></div>
   </div>
 </template>
 <script>
@@ -14,6 +15,7 @@ export default {
   },
   data() {
     return {
+      data: null,
       options: {
         debug: 'info',
         modules: {
@@ -50,6 +52,7 @@ export default {
   methods: {
     tested() {
       console.log(this.$refs.editor.getEditor(), 'getEditor');
+      this.data = this.$refs.editor.getEditor().outerHTML;
     },
   },
 };
@@ -58,6 +61,6 @@ export default {
 <style scoped>
 .wrap {
   width: 100%;
-  height: 500px;
+  height: 200px;
 }
 </style>
