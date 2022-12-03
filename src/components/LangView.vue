@@ -52,7 +52,7 @@ export default {
   methods: {
     tested() {
       console.log(this.$refs.editor.getEditor(), 'getEditor');
-      this.data = this.$refs.editor.getEditor().outerHTML;
+      this.data = `${this.$refs.editor.getEditor().outerHTML}`;
     },
   },
 };
