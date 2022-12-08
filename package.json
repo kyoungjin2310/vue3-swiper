@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vueup/vue-quill": "^1.0.0",
+    "@zoomus/websdk": "^2.9.5",
     "axios": "^1.2.0",
     "core-js": "^3.8.3",
     "countries-and-timezones": "^3.3.0",

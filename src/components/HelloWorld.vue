@@ -6,8 +6,8 @@
       class="mySwiper"
       @swiper="onSwiper"
     >
-      <swiper-slide><date-view /> </swiper-slide>
-      <!-- <swiper-slide><date-vuetify /> </swiper-slide> -->
+      <!-- <swiper-slide><date-view /> </swiper-slide> -->
+      <swiper-slide><date-vuetify /> </swiper-slide>
       <!-- <swiper-slide>
         <menu-wrap />
       </swiper-slide> -->
@@ -39,8 +39,8 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination } from 'swiper';
-import DateView from './DateView.vue';
-// import DateVuetify from './DateVuetify.vue';
+// import DateView from './DateView.vue';
+import DateVuetify from './DateVuetify.vue';
 // import MenuWrap from './MenuWrap.vue';
 import LangView from './LangView.vue';
 // import TimePicker from './TimePicker.vue';
@@ -50,8 +50,8 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
-    DateView,
-    // DateVuetify,
+    // DateView,
+    DateVuetify,
     // MenuWrap,
     LangView,
     // TimePicker,
