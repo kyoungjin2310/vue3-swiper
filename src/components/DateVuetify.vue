@@ -64,6 +64,7 @@ export default {
         success: (success) => {
           console.log(success);
           ZoomMtg.join({
+            //meetingNumber - zoom에서 받은 개인 회의 ID
             meetingNumber: this.meetingNumber,
             userName: this.userName,
             signature: signature,
