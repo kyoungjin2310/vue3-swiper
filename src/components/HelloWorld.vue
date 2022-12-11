@@ -1,30 +1,33 @@
 <template>
-  <div>
-    <swiper
-      :pagination="true"
-      :modules="modules"
-      class="mySwiper"
-      @swiper="onSwiper"
-    >
-      <!-- <swiper-slide><date-view /> </swiper-slide> -->
-      <swiper-slide><date-vuetify /> </swiper-slide>
-      <!-- <swiper-slide>
+  <div class="wrap">
+    <spinner-loading />
+    <div class="swiperWrap">
+      <swiper
+        :pagination="true"
+        :modules="modules"
+        class="mySwiper"
+        @swiper="onSwiper"
+      >
+        <!-- <swiper-slide><date-view /> </swiper-slide> -->
+        <!-- <swiper-slide><date-vuetify /> </swiper-slide> -->
+        <!-- <swiper-slide>
         <menu-wrap />
       </swiper-slide> -->
-      <swiper-slide>
-        <custom-date />
-      </swiper-slide>
-      <swiper-slide>
-        <lang-view />
-      </swiper-slide>
-      <!-- <swiper-slide>
+        <swiper-slide>
+          <custom-date />
+        </swiper-slide>
+        <swiper-slide>
+          <lang-view />
+        </swiper-slide>
+        <!-- <swiper-slide>
         <time-picker />
       </swiper-slide> -->
-      <swiper-slide>
-        <add-tag />
-      </swiper-slide>
-    </swiper>
-    <button @click="nextSlide">Next</button>
+        <swiper-slide>
+          <add-tag />
+        </swiper-slide>
+      </swiper>
+      <button @click="nextSlide">Next</button>
+    </div>
   </div>
 </template>
 <script>
@@ -40,23 +43,25 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper';
 // import DateView from './DateView.vue';
-import DateVuetify from './DateVuetify.vue';
+// import DateVuetify from './DateVuetify.vue';
 // import MenuWrap from './MenuWrap.vue';
 import LangView from './LangView.vue';
 // import TimePicker from './TimePicker.vue';
 import AddTag from './AddTag.vue';
 import CustomDate from './CustomDate.vue';
+import SpinnerLoading from '../../../vue-news/src/components/SpinnerLoading.vue';
 export default {
   components: {
     Swiper,
     SwiperSlide,
     // DateView,
-    DateVuetify,
+    // DateVuetify,
     // MenuWrap,
     LangView,
     // TimePicker,
     AddTag,
     CustomDate,
+    SpinnerLoading,
   },
   setup() {
     return {
@@ -67,12 +72,16 @@ export default {
     return {
       swiper: null,
       length: 0,
+      loading: this.$store.state.loading,
     };
+  },
+  mounted() {
+    this.loading = false;
+    console.log(this.loading);
   },
   methods: {
     onSwiper(swiper) {
       this.swiper = swiper;
-      console.log(swiper);
       this.length = swiper.slidesGrid.length - 1;
     },
     nextSlide() {

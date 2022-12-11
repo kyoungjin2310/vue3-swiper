@@ -17,7 +17,7 @@ export default {
     return {
       data: null,
       options: {
-        debug: 'info',
+        // debug: 'info',
         modules: {
           toolbar: [
             ['bold', 'italic', 'underline', 'strike'], // <strong>, <em>, <u>, <s>
@@ -46,12 +46,12 @@ export default {
   mounted() {
     // console.log(this.$refs.editor.getEditor(), 'getEditor');
     // console.log(this.$refs.editor.getHTML(), 'getHTML');
-    console.log(this.$refs.editor.setHTML(this.test));
+    // console.log(this.$refs.editor.setHTML(this.test));
     // console.log(this.$refs.editor.getContents(0, 0));
   },
   methods: {
     tested() {
-      console.log(this.$refs.editor.getEditor(), 'getEditor');
+      // console.log(this.$refs.editor.getEditor(), 'getEditor');
       this.data = `${this.$refs.editor.getEditor().outerHTML}`;
     },
   },
