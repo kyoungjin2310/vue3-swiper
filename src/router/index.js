@@ -36,12 +36,12 @@ router.beforeEach(function (to, from, next) {
     store.state.error !== -803 &&
     store.state.token
   ) {
+    //에러 없어서 정상루트
     store.state.loading = false;
     router.push("/home");
   } else {
-    //에러 없어서 정상루트
+    //만료 token 없애기
     if (store.state.error === -803) {
-      //만료 token 없애기
       //deleteAllLocalStorage();
       store.state.token = null;
     }
