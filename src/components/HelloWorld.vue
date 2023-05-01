@@ -13,43 +13,50 @@
         <!-- <swiper-slide>
         <menu-wrap />
       </swiper-slide> -->
-        <swiper-slide>
+        <!-- <swiper-slide>
           <custom-date />
         </swiper-slide>
         <swiper-slide>
           <lang-view />
-        </swiper-slide>
+        </swiper-slide> -->
         <!-- <swiper-slide>
         <time-picker />
       </swiper-slide> -->
-        <swiper-slide>
+        <!-- <swiper-slide>
           <add-tag />
+        </swiper-slide> -->
+        <!-- <swiper-slide>
+          <lang-view></lang-view>
+        </swiper-slide> -->
+        <swiper-slide>
+          <pagination-style />
         </swiper-slide>
       </swiper>
-      <button @click="nextSlide">Next</button>
+      <!-- <button @click="nextSlide">Next</button> -->
     </div>
   </div>
 </template>
 <script>
 // Import Swiper Vue.js components
-import 'v-calendar/dist/style.css';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import "v-calendar/dist/style.css";
+import { Swiper, SwiperSlide } from "swiper/vue";
 
 // Import Swiper styles
-import 'swiper/css';
+import "swiper/css";
 
-import 'swiper/css/pagination';
+import "swiper/css/pagination";
 
 // import required modules
-import { Pagination } from 'swiper';
+import { Pagination } from "swiper";
 // import DateView from './DateView.vue';
 // import DateVuetify from './DateVuetify.vue';
 // import MenuWrap from './MenuWrap.vue';
-import LangView from './LangView.vue';
+// import LangView from "./LangView.vue";
 // import TimePicker from './TimePicker.vue';
-import AddTag from './AddTag.vue';
-import CustomDate from './CustomDate.vue';
-import SpinnerLoading from '../../../vue-news/src/components/SpinnerLoading.vue';
+// import AddTag from "./AddTag.vue";
+// import CustomDate from "./CustomDate.vue";
+import SpinnerLoading from "../../../vue-news/src/components/SpinnerLoading.vue";
+import PaginationStyle from "./PaginationStyle.vue";
 export default {
   components: {
     Swiper,
@@ -57,11 +64,12 @@ export default {
     // DateView,
     // DateVuetify,
     // MenuWrap,
-    LangView,
+    // LangView,
     // TimePicker,
-    AddTag,
-    CustomDate,
+    // AddTag,
+    // CustomDate,
     SpinnerLoading,
+    PaginationStyle,
   },
   setup() {
     return {
@@ -87,7 +95,7 @@ export default {
     nextSlide() {
       console.log(this.swiper.activeIndex);
       if (this.length === this.swiper.activeIndex) {
-        this.$router.push('/login');
+        this.$router.push("/login");
       } else {
         this.swiper.slideTo(this.swiper.activeIndex + 1);
       }
