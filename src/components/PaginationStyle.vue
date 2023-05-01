@@ -20,8 +20,6 @@ import PaginationList from "./PaginationList.vue";
 export default {
   data() {
     return {
-      listData: [],
-      paymentInfo: [],
       total: 50,
       page: 1,
       limit: 5,
@@ -33,10 +31,6 @@ export default {
   },
   methods: {
     pagingMethod(page) {
-      this.listData = this.paymentInfo.slice(
-        (page - 1) * this.limit,
-        page * this.limit,
-      );
       this.page = page;
       this.pageDataSetting(this.total, this.limit, this.block, page);
     },
